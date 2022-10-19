@@ -1,26 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jboucher <jboucher@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/03 17:20:18 by jboucher          #+#    #+#             */
-/*   Updated: 2022/10/19 14:39:29 by jboucher         ###   ########.fr       */
+/*   Created: 2022/10/19 15:31:00 by jboucher          #+#    #+#             */
+/*   Updated: 2022/10/19 15:40:53 by jboucher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <unistd.h>
 
-char	*ft_strlcpy(char *dest, char *src, int dstsize)
+int isascii( int a )
+
 {
-	int	i;
-
-	i = 0;
-	while (src[i] !='\0' || i < dstsize)
-	{
-		dest[i] = src[i];
-		i++;
-	}
-	dest[i] = '\0';
-	return (dest);
+    if(a <= 0 && a >= 127)
+        return(1);
+    return(0);    
 }

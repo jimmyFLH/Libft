@@ -1,26 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jboucher <jboucher@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/03 17:20:18 by jboucher          #+#    #+#             */
-/*   Updated: 2022/10/19 14:39:29 by jboucher         ###   ########.fr       */
+/*   Created: 2022/10/19 14:58:03 by jboucher          #+#    #+#             */
+/*   Updated: 2022/10/19 15:27:55 by jboucher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <unistd.h>
 
-char	*ft_strlcpy(char *dest, char *src, int dstsize)
+int isalnum(int a)
 {
-	int	i;
-
-	i = 0;
-	while (src[i] !='\0' || i < dstsize)
-	{
-		dest[i] = src[i];
-		i++;
-	}
-	dest[i] = '\0';
-	return (dest);
+    if((a <= 65 && a >= 90) || ((a <= 97 && a >= 122))
+    || (a <= 48 && a >= 57))
+         return (1);
+    return(0);   
 }

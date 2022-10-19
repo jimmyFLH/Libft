@@ -1,26 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_memov.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jboucher <jboucher@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/03 17:20:18 by jboucher          #+#    #+#             */
-/*   Updated: 2022/10/19 14:39:29 by jboucher         ###   ########.fr       */
+/*   Created: 2022/10/19 17:26:57 by jboucher          #+#    #+#             */
+/*   Updated: 2022/10/19 18:25:16 by jboucher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 
-char	*ft_strlcpy(char *dest, char *src, int dstsize)
+void *memmove(void *str1, const void *str2, size_t n)
+
 {
-	int	i;
-
-	i = 0;
-	while (src[i] !='\0' || i < dstsize)
-	{
-		dest[i] = src[i];
-		i++;
-	}
-	dest[i] = '\0';
-	return (dest);
+    unsigned    
+    unsigned    
+    
 }
