@@ -1,27 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jimmyfleisch <jimmyfleisch@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/03 17:20:18 by jboucher          #+#    #+#             */
-/*   Updated: 2022/10/19 21:25:39 by jimmyfleisc      ###   ########.fr       */
+/*   Created: 2022/10/20 00:13:51 by jimmyfleisc       #+#    #+#             */
+/*   Updated: 2022/10/21 21:05:13 by jimmyfleisc      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-char	*ft_strlcpy(char *dest, char *src, int dstsize)
+char	*ft_strchr(const char *str, int ch)
 {
-	int	i;
+	int i;
 
 	i = 0;
-	while (src[i] != '\0' || i < dstsize)
+	if (NULL == str)
+		return (NULL);
+	while (str[i])
 	{
-		dest[i] = src[i];
+		if (str[i] == (char)ch)
+			return (&str[i]);
 		i++;
 	}
-	dest[i] = '\0';
-	return (dest);
+	return (NULL);
 }

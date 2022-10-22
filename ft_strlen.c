@@ -3,19 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jboucher <jboucher@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jimmyfleisch <jimmyfleisch@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 17:25:35 by jboucher          #+#    #+#             */
-/*   Updated: 2022/10/03 17:37:23 by jboucher         ###   ########.fr       */
+/*   Updated: 2022/10/19 21:25:25 by jimmyfleisc      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_strlen(char *s)
+int	ft_strlen(char *s)
 {
-    int i;
+	int	i;
 
-    i = 0;
-    while (s[i])
-        i++;
-    return (i);
+	i = 0;
+	while (s[i])
+		i++;
+	return (i);
 }

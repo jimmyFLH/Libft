@@ -1,27 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_memmov.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jimmyfleisch <jimmyfleisch@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/03 17:20:18 by jboucher          #+#    #+#             */
-/*   Updated: 2022/10/19 21:25:39 by jimmyfleisc      ###   ########.fr       */
+/*   Created: 2022/10/19 17:26:57 by jboucher          #+#    #+#             */
+/*   Updated: 2022/10/19 22:52:41 by jimmyfleisc      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
-char	*ft_strlcpy(char *dest, char *src, int dstsize)
+void	*memmove(void *str1, const void *str2, size_t n)
 {
-	int	i;
+	unsigned char *dst2;
+	unsigned char *src2;
 
-	i = 0;
-	while (src[i] != '\0' || i < dstsize)
+	dst2 = (unsigned char *)str1;
+	src2 = (unsigned char *)str2;
+	if (str2 < str1)
 	{
-		dest[i] = src[i];
-		i++;
+		src2 = src2 + n - 1;
+		dst2 = dst2 + n - 1;
+		while (n--)
+			*dst2-- = *src2--;
 	}
-	dest[i] = '\0';
-	return (dest);
-}
+	else if (str1 >= str2)
+	{
+		while (n--)
+			*dst2++ = *src2++;
+	}
+	return (str1);

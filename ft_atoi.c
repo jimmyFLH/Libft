@@ -1,27 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jimmyfleisch <jimmyfleisch@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/03 17:20:18 by jboucher          #+#    #+#             */
-/*   Updated: 2022/10/19 21:25:39 by jimmyfleisc      ###   ########.fr       */
+/*   Created: 2022/10/20 18:07:14 by jimmyfleisc       #+#    #+#             */
+/*   Updated: 2022/10/21 20:58:10 by jimmyfleisc      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
-char	*ft_strlcpy(char *dest, char *src, int dstsize)
+int	ft_atoi(char *str)
 {
 	int	i;
+	int	ctmin;
+	int	numb;
 
 	i = 0;
-	while (src[i] != '\0' || i < dstsize)
-	{
-		dest[i] = src[i];
+	ctmin = 1;
+	numb = 0;
+	while (ft_strchr(WHITE_SPACE, str[i]))
 		i++;
+	if (str[i] == 43 || str[i] == 45)
+	{
+		if (str[i] == 45)
+			ctmin *= -1;
+			i++;
 	}
-	dest[i] = '\0';
-	return (dest);
+	while (str[i] >= 48 && str[i] <= 57)
+	{
+		numb = (str[i] - 48) + (numb * 10);
+			i++;
+		if (!(str[i] >= 48 && str[i] <= 57))
+			return (numb * ctmin);
+	}
+	return (0);
 }

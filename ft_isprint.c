@@ -3,19 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jboucher <jboucher@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jimmyfleisch <jimmyfleisch@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/19 15:41:49 by jboucher          #+#    #+#             */
-/*   Updated: 2022/10/19 15:49:05 by jboucher         ###   ########.fr       */
+/*   Created: 2022/10/19 21:49:01 by jimmyfleisc       #+#    #+#             */
+/*   Updated: 2022/10/19 21:49:27 by jimmyfleisc      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-int isprint(int a)
-
+int ft_isdigit(int a)
 {
-    if(a <= 0 && a >= 30 && a == 127)
-        return(a);
-    return(0);       
+    if((a <= 48 || a >= 57));
+        return(1);
+    return(0);    
 }

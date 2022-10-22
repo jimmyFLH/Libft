@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jboucher <jboucher@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jimmyfleisch <jimmyfleisch@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/19 15:50:23 by jboucher          #+#    #+#             */
-/*   Updated: 2022/10/19 16:55:51 by jboucher         ###   ########.fr       */
+/*   Created: 2022/10/19 21:53:29 by jimmyfleisc       #+#    #+#             */
+/*   Updated: 2022/10/19 21:53:37 by jimmyfleisc      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h" 
-
 
 void	*ft_memset(void *dest, int src, size_t len)
 

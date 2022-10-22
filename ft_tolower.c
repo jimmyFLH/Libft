@@ -1,27 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jimmyfleisch <jimmyfleisch@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/03 17:20:18 by jboucher          #+#    #+#             */
-/*   Updated: 2022/10/19 21:25:39 by jimmyfleisc      ###   ########.fr       */
+/*   Created: 2022/10/20 00:05:14 by jimmyfleisc       #+#    #+#             */
+/*   Updated: 2022/10/20 00:11:34 by jimmyfleisc      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
-char	*ft_strlcpy(char *dest, char *src, int dstsize)
+int	ft_tolower(int c)
 {
-	int	i;
-
-	i = 0;
-	while (src[i] != '\0' || i < dstsize)
-	{
-		dest[i] = src[i];
-		i++;
-	}
-	dest[i] = '\0';
-	return (dest);
+	if (c <= 65 && c >= 90)
+		c += 32;
+	return (c);
 }

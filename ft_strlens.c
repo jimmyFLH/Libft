@@ -1,27 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_strlens.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jimmyfleisch <jimmyfleisch@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/03 17:20:18 by jboucher          #+#    #+#             */
-/*   Updated: 2022/10/19 21:25:39 by jimmyfleisc      ###   ########.fr       */
+/*   Created: 2022/10/21 20:21:46 by jimmyfleisc       #+#    #+#             */
+/*   Updated: 2022/10/21 20:27:04 by jimmyfleisc      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
-char	*ft_strlcpy(char *dest, char *src, int dstsize)
+size_t ft_strlen(const  char *str)
 {
-	int	i;
-
-	i = 0;
-	while (src[i] != '\0' || i < dstsize)
-	{
-		dest[i] = src[i];
-		i++;
-	}
-	dest[i] = '\0';
-	return (dest);
+    size_t  i;
+    
+    i = 0;
+    while(str[i] != '\0')
+    {
+        i++;
+    }    
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jboucher <jboucher@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jimmyfleisch <jimmyfleisch@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/19 16:20:09 by jboucher          #+#    #+#             */
-/*   Updated: 2022/10/19 18:13:04 by jboucher         ###   ########.fr       */
+/*   Created: 2022/10/19 21:50:38 by jimmyfleisc       #+#    #+#             */
+/*   Updated: 2022/10/19 21:50:53 by jimmyfleisc      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,4 +29,3 @@ void	*memcpy(void *restrict dst, const void *restrict src, size_t n)
 		i++;
 	}
 	return ((void *)dst);
-}

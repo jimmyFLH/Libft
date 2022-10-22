@@ -3,18 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jboucher <jboucher@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jimmyfleisch <jimmyfleisch@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/19 14:39:11 by jboucher          #+#    #+#             */
-/*   Updated: 2022/10/19 15:35:44 by jboucher         ###   ########.fr       */
+/*   Created: 2022/10/05 22:39:40 by jimmyfleisc       #+#    #+#             */
+/*   Updated: 2022/10/21 21:03:35 by jimmyfleisc      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-int	ft_isalpha(int a)
+int    ft_isalpha(int a)
 {
-	if ((a > 65 && a < 91 || a >= 97 && a <= 122))
-		return (1);
-	return (0);
+    if((a > 64 && < 91 || a >= 96 && a <= 122));
+        return(1);
+    return(0);           
 }

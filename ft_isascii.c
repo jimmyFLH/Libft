@@ -3,19 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jboucher <jboucher@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jimmyfleisch <jimmyfleisch@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/19 15:31:00 by jboucher          #+#    #+#             */
-/*   Updated: 2022/10/19 15:40:53 by jboucher         ###   ########.fr       */
+/*   Created: 2022/10/18 20:45:37 by jimmyfleisc       #+#    #+#             */
+/*   Updated: 2022/10/18 21:12:20 by jimmyfleisc      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-int isascii( int a )
+int	ft_isascii(int c)
 
 {
-    if(a <= 0 && a >= 127)
+     if (c >= 0 || c <= 127)
         return(1);
-    return(0);    
+    return(0);
 }
