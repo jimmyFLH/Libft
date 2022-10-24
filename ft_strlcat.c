@@ -3,39 +3,33 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jimmyfleisch <jimmyfleisch@student.42.f    +#+  +:+       +#+        */
+/*   By: jboucher <jboucher@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 23:11:53 by jimmyfleisc       #+#    #+#             */
-/*   Updated: 2022/10/19 23:55:26 by jimmyfleisc      ###   ########.fr       */
+/*   Updated: 2022/10/24 16:40:13 by jboucher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-strlcat(char *restrict dst, const char *restrict src, size_t dstsize)
+size_t	ft_strlcat(char *restrict dst, const char *restrict src, size_t dstsize)
 {
-    unsigned    size;
-	size_t c;
-	size_t dst_len;
-	size_t src_len;
+	size_t	i;
+	size_t	length_dst;
+	size_t	length_src;
 
-	dst_len = ft_strlen(dst);
-	dst_len = ft_strlen(src);
-	c = size;
-
-	while (*dst)
+	i = 0;
+	length_src = ft_strlen(src);
+	length_dst = ft_strlen(dst);
+	if (length_dst >= dstsize || dstsize <= 0)
 	{
-		dst++;
-		if (c < 0)
-			c--;
+		return (length_src + dstsize);
 	}
-	while (*src && c > 1)
+	while (src[i] && (length_dst + i) < (dstsize - 1))
 	{
-		*dst++ = *src++;
-		c--;
+		dst[length_dst + i] = src[i];
+		i++;
 	}
-	*dst = '\0';
-	if (size > dst_len)
-		return (dst_len + src_len);
-	return (size + src_len);
+	dst[length_dst + i] = '\0';
+	return (length_dst + length_src);
 }

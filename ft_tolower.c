@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jimmyfleisch <jimmyfleisch@student.42.f    +#+  +:+       +#+        */
+/*   By: jboucher <jboucher@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/20 00:05:14 by jimmyfleisc       #+#    #+#             */
-/*   Updated: 2022/10/20 00:11:34 by jimmyfleisc      ###   ########.fr       */
+/*   Created: 2022/10/22 15:51:18 by jboucher          #+#    #+#             */
+/*   Updated: 2022/10/22 15:51:26 by jboucher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

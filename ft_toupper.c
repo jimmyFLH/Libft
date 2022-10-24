@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jimmyfleisch <jimmyfleisch@student.42.f    +#+  +:+       +#+        */
+/*   By: jboucher <jboucher@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/19 23:56:47 by jimmyfleisc       #+#    #+#             */
-/*   Updated: 2022/10/20 00:04:29 by jimmyfleisc      ###   ########.fr       */
+/*   Created: 2022/10/22 15:51:55 by jboucher          #+#    #+#             */
+/*   Updated: 2022/10/24 17:30:46 by jboucher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	toupper(int c)
+int	ft_toupper(int c)
 
 {
 	if (c >= 97 && c <= 122)
