@@ -1,31 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jboucher <jboucher@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/22 16:22:04 by jboucher          #+#    #+#             */
-/*   Updated: 2022/10/26 16:49:55 by jboucher         ###   ########.fr       */
+/*   Created: 2022/10/26 18:31:43 by jboucher          #+#    #+#             */
+/*   Updated: 2022/10/26 18:40:17 by jboucher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_memcmp(const void *s1, const void *s2, size_t n)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
+
 {
-	size_t			i;
-	unsigned char	*ch1;
-	unsigned char	*ch2;
+	size_t	i;
+	size_t	j;
+	char	*str;
 
 	i = 0;
-	ch1 = (unsigned char *)s1;
-	ch2 = (unsigned char *)s2;
-	while (i < n)
+	j = 0;
+	if (!s)
+		return (NULL);
+	str = ft_calloc(sizeof(*s), len + 1);
+	if (!str)
+		return (NULL);
+	while (s[i])
 	{
-		if (ch1[i] != ch2[i])
-			return (ch1[i] - ch2[i]);
+		if (i >= start && j < len)
+		{
+			str[j] = s[i];
+			j++;
+		}
 		i++;
 	}
-	return (0);
+	return (str);
 }
