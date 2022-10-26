@@ -6,18 +6,18 @@
 /*   By: jboucher <jboucher@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/22 15:47:40 by jboucher          #+#    #+#             */
-/*   Updated: 2022/10/24 17:04:41 by jboucher         ###   ########.fr       */
+/*   Updated: 2022/10/25 16:26:07 by jboucher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 size_t	ft_strlen(const char *str)
-
 {
 	size_t	i;
 
 	i = 0;
 	while (str[i])
 		i++;
+	return (i);
 }

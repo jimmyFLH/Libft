@@ -6,22 +6,27 @@
 /*   By: jboucher <jboucher@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 17:20:18 by jboucher          #+#    #+#             */
-/*   Updated: 2022/10/24 17:04:06 by jboucher         ###   ########.fr       */
+/*   Updated: 2022/10/25 20:11:35 by jboucher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strlcpy(char *dst, const char *src, size_t size)
+size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
-	int	i;
+	size_t	i;
+	size_t	src_len;
 
+	src_len = ft_strlen(src);
 	i = 0;
-	while (src[i] != '\0' || i < size)
+	if (size != 0)
 	{
-		dst[i] = src[i];
-		i++;
+		while (src[i] != '\0' && i < size - 1)
+		{
+			dst[i] = src[i];
+			i++;
+		}
+		dst[i] = '\0';
 	}
-	dst[i] = '\0';
-	return (dst);
+	return (src_len);
 }
