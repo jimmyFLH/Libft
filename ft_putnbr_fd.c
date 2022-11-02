@@ -1,43 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jboucher <jboucher@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/26 18:31:43 by jboucher          #+#    #+#             */
-/*   Updated: 2022/11/01 15:17:30 by jboucher         ###   ########.fr       */
+/*   Created: 2022/11/02 15:08:35 by jboucher          #+#    #+#             */
+/*   Updated: 2022/11/02 15:39:24 by jboucher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
-
+void	ft_putnbr_fd(int n, int fd)
 {
-	size_t	i;
-	size_t	j;
-	char	*str;
-
-	i = 0;
-	j = 0;
-	if (!s)
-		return (NULL);
-	if (len > ft_strlen(s))
-		len = ft_strlen(s);
-	str = ft_calloc(sizeof(*s), len + 1);
-	if (!str)
-		return (NULL);
-	if (start > ft_strlen(s))
-		return (str);
-	while (s[i])
+	if (n == -2147483648)
+		ft_putstr_fd("-2147483648", fd);
+	else if (n < 0)
 	{
-		if (i >= start && j < len)
-		{
-			str[j] = s[i];
-			j++;
-		}
-		i++;
+		ft_putchar_fd('-', fd);
+		ft_putnbr_fd(-n, fd);
 	}
-	return (str);
+	else if (n >= 10)
+	{
+		ft_putnbr_fd(n / 10, fd);
+		ft_putchar_fd(n % 10 + '0', fd);
+	}
+	else
+		ft_putchar_fd(n + '0', fd);
 }

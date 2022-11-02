@@ -1,43 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jboucher <jboucher@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/26 18:31:43 by jboucher          #+#    #+#             */
-/*   Updated: 2022/11/01 15:17:30 by jboucher         ###   ########.fr       */
+/*   Created: 2022/11/01 15:19:32 by jboucher          #+#    #+#             */
+/*   Updated: 2022/11/01 16:22:15 by jboucher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
-
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	size_t	i;
-	size_t	j;
+	size_t	slen;
 	char	*str;
 
-	i = 0;
-	j = 0;
-	if (!s)
+	if (!s1 || !s2)
 		return (NULL);
-	if (len > ft_strlen(s))
-		len = ft_strlen(s);
-	str = ft_calloc(sizeof(*s), len + 1);
+	slen = ft_strlen(s1) + ft_strlen(s2) + 1;
+	str = ft_calloc(slen, sizeof(char));
 	if (!str)
 		return (NULL);
-	if (start > ft_strlen(s))
-		return (str);
-	while (s[i])
-	{
-		if (i >= start && j < len)
-		{
-			str[j] = s[i];
-			j++;
-		}
-		i++;
-	}
+	ft_strlcat(str, (char *)s1, slen);
+	ft_strlcat(str, (char *)s2, slen);
 	return (str);
 }
