@@ -6,45 +6,60 @@
 /*   By: jboucher <jboucher@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 16:36:14 by jboucher          #+#    #+#             */
-/*   Updated: 2022/11/24 19:35:01 by jboucher         ###   ########.fr       */
+/*   Updated: 2022/11/26 16:26:31 by jboucher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include"libft.h"
 
-static size_t	get_digits(int n)
+static char	*ft_putnum(char *res, unsigned int num, long int len)
 {
-	size_t	i;
-
-	i = 1;
-	while (n / 10)
-		i++;
-	return (i);
+	while (num > 0)
+	{
+		res[len] = (num % 10) + 48;
+		num /= 10;
+		len--;
+	}
+	return (res);
 }
 
-char	*ft_itoa(int n)
+static int	ft_len(int nb)
 {
-	char		*str_num;
-	size_t		digits;
-	long int	num;
+	int	len;
 
-	num = n;
-	digits = get_digits(n);
-	if (n < 0)
+	len = 0;
+	if (nb <= 0)
+		len = 1;
+	while (nb != 0)
 	{
-		num *= -1;
-		digits++;
+		len++;
+		nb /= 10;
 	}
-    str_num = (char *)malloc(sizeof(char) * (digits + 1));
-	if (!str_num)
+	return (len);
+}
+
+char	*ft_itoa(int nb)
+{
+	char	*str;
+	int		i;
+	long	n;
+
+	n = nb;
+	i = ft_len(n);
+	str = malloc(sizeof(char) * i + 1);
+	if (!str)
 		return (NULL);
-	*(str_num + digits) = 0;
-	while (digits--)
-	{
-		*(str_num + digits) = num % 10 + '0';
-		num = num / 10;
-	}
+	str[i] = '\0';
+	i--;
+	if (n == 0)
+		str[0] = 48;
 	if (n < 0)
-		*(str_num + 0) = '-';
-	return (str_num);
+	{
+		str[0] = '-';
+		n *= -1;
+	}
+	else
+		nb = n;
+	str = ft_putnum(str, n, i);
+	return (str);
 }
