@@ -6,7 +6,7 @@
 /*   By: jboucher <jboucher@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 17:32:09 by jboucher          #+#    #+#             */
-/*   Updated: 2022/11/28 17:28:28 by jboucher         ###   ########.fr       */
+/*   Updated: 2022/11/28 18:00:37 by jboucher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 # define WHITE_SPACE " \n\r\f\t\v"
 
-# include <string.h>
 # include <stdlib.h>
 # include <unistd.h>
 
