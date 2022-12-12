@@ -6,7 +6,7 @@
 /*   By: jboucher <jboucher@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 16:47:15 by jboucher          #+#    #+#             */
-/*   Updated: 2022/11/24 19:28:06 by jboucher         ###   ########.fr       */
+/*   Updated: 2022/12/12 10:34:48 by jboucher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ static int	ft_count_word(char const *s, char c)
 
 static int	ft_size_word(char const *s, char c, int i)
 {
-	int		size;
+	int	size;
 
 	size = 0;
 	while (s[i] != c && s[i])
@@ -55,6 +55,8 @@ char	**ft_split(char const *s, char c)
 
 	i = 0;
 	j = -1;
+	if (!s)
+		return (NULL);
 	word = ft_count_word(s, c);
 	strs = (char **)malloc((word + 1) * sizeof(char *));
 	if (!strs)

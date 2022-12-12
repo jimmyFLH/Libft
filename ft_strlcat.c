@@ -6,7 +6,7 @@
 /*   By: jboucher <jboucher@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 23:11:53 by jimmyfleisc       #+#    #+#             */
-/*   Updated: 2022/10/24 16:40:13 by jboucher         ###   ########.fr       */
+/*   Updated: 2022/12/12 11:16:27 by jboucher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ size_t	ft_strlcat(char *restrict dst, const char *restrict src, size_t dstsize)
 	size_t	length_src;
 
 	i = 0;
+	if (!dst || !src)
+		return (NULL);
 	length_src = ft_strlen(src);
 	length_dst = ft_strlen(dst);
 	if (length_dst >= dstsize || dstsize <= 0)

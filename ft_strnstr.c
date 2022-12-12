@@ -6,7 +6,7 @@
 /*   By: jboucher <jboucher@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/22 16:49:32 by jboucher          #+#    #+#             */
-/*   Updated: 2022/10/25 19:16:21 by jboucher         ###   ########.fr       */
+/*   Updated: 2022/12/12 11:20:56 by jboucher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	size_t	j;
 
 	i = 0;
+	if (!haystack)
+		return (NULL);
 	if (*needle == '\0' || needle == NULL)
 		return ((char *)haystack);
 	while (haystack[i] != '\0' && i < len)

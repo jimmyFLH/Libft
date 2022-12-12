@@ -6,7 +6,7 @@
 /*   By: jboucher <jboucher@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/26 19:37:33 by jboucher          #+#    #+#             */
-/*   Updated: 2022/11/26 20:30:37 by jboucher         ###   ########.fr       */
+/*   Updated: 2022/12/12 11:39:42 by jboucher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,16 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 
 	if (lst && del)
 	{
-		while (*lst)
-		{
-			del((*lst)->content);
-			temp = (*lst);
-			(*lst) = temp->next;
-			free(temp);
+		if (*lst)
+		{		
+			while (*lst)
+			{
+				del((*lst)->content);
+				temp = (*lst);
+				(*lst) = temp->next;
+				free(temp);
+			}
 		}
 	}
-	*lst = NULL;
+	return ;
 }
