@@ -6,7 +6,7 @@
 #    By: jboucher <jboucher@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/07 14:32:50 by jboucher          #+#    #+#              #
-#    Updated: 2022/11/28 17:03:57 by jboucher         ###   ########.fr        #
+#    Updated: 2022/12/12 15:30:26 by jboucher         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,11 +28,13 @@ OBJ_BONUS = $(SRCS_BONUS:%c=%o)
 
 CC = gcc
 
-FLAGS = -Wall -Werror -Wextra
+CFLAGS = -Wall -Werror -Wextra
 
 NAME = libft.a
 
 all: $(NAME)
+
+
 
 $(NAME): $(OBJ)
 		ar -rcs $(NAME) $(OBJ)
